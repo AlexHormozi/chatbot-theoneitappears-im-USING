@@ -1,3 +1,7 @@
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)  # Define the Flask app first
+
 @app.route('/chatbot', methods=['GET'])
 def chatbot_page():
     return '''
@@ -54,3 +58,6 @@ def chatbot_page():
     </body>
     </html>
     '''
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=10000)
